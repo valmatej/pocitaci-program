@@ -98,7 +98,8 @@ def priklad(kolikaty, vsechny, operator, priklad_jednoduchy):
         except:
             print("  mělo to být číslo!")
             print(" tento výsledek je špatně!!")
-        
+
+# zeptá se na počet příkladů
 def pocet_prikladu ():
     vyzva = "  zadejte prosím počet příkladů: "
     while True:
@@ -111,6 +112,8 @@ def pocet_prikladu ():
         print("  mělo to být číslo,od 1 do 100")
     return pocet
 
+#funkce která se zeptá na složitost programu a vrátí maximální velikost čísla
+# a jestli je to jednoduchý nebo složitý režim
 def vyber_slozitosti():
     vyzva = """Vyberte si prosím jak složitý program chcete spustit:
     1) jednoduchý
@@ -136,6 +139,6 @@ operator = menu()
 # Zadavej priklady
 for i in range(pocet):
     priklad(i+1, pocet+1, operator, priklad_jednoduchy)
+#příkaz pro ukončení programu za libovolný počet sekund
 sleep(2)
 
-    
