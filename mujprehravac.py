@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+print ("Media player")
+print("version 1.0")
+print("by Tomáš Jirka and Matěj Valášek")
+print(" ")
+print(" ")
 MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
 from time import sleep
 from os import listdir
