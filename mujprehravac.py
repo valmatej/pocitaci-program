@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.5
 
 print(" ")
 print("     Media player")
@@ -55,7 +55,14 @@ print("         A                 A")
 print(" ")
 print(" ")
 
+
+
 MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
+
+
+
+
+
 from time import sleep
 from os import listdir
 from os.path import isfile, join
@@ -71,7 +78,7 @@ def get_files (directory):
     return sorted(mp3_files)
 
 def zobrazeni_vyzvy(pocet_pisnicek):
-    vyzva = "vyberte si který soubor chcete přehrát:"
+    vyzva = "Choose the file you want to play:"
     while True:
         try:
             cislo_pisnicky = int(input(vyzva))
@@ -79,7 +86,7 @@ def zobrazeni_vyzvy(pocet_pisnicek):
                 break
         except:
             pass
-        print("  mělo to být číslo,od 1 do", pocet_pisnicek)
+        print("  It should be a number from 1 to", pocet_pisnicek)
     return cislo_pisnicky
 
 mp3_files = get_files(MUSIC_DIRECTORY)
@@ -89,10 +96,10 @@ for i, f in enumerate(mp3_files, start=1):
 
 cislo_vybrane_pisnicky = zobrazeni_vyzvy(len(mp3_files))
 vybrany_soubor = mp3_files[cislo_vybrane_pisnicky -1]
-print ("vybrali jste písničku číslo:", cislo_vybrane_pisnicky, vybrany_soubor)
+print ("You chose a song number:", cislo_vybrane_pisnicky, vybrany_soubor)
 
 subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
-sleep(2)
+sleep(3)
 
 
 
