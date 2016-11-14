@@ -54,6 +54,8 @@ print("          A               A")
 print("         A                 A")
 print(" ")
 print(" ")
+print(" pro vybrání jiného adresáře zadejte jinou cestu k adresáři,")
+print("spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
 
 
 
