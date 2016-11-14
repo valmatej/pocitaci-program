@@ -139,6 +139,7 @@ operator = menu()
 # Zadavej priklady
 for i in range(pocet):
     priklad(i+1, pocet+1, operator, priklad_jednoduchy)
+
 #příkaz pro ukončení programu za libovolný počet sekund
 sleep(2)
 
