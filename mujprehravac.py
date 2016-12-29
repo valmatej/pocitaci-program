@@ -6,7 +6,7 @@ MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
 
 print(" ")
 print("     Media player")
-print("     version 1.0")
+print("     version 2.0")
 print("     by Tomáš Jirka and Matěj Valášek")
 print(" ")
 print("                MM      MM ")
@@ -63,8 +63,6 @@ print("spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
 print(" ")
 print(" ")
 
-
-from time import sleep
 from os import listdir
 from os.path import isfile, join
 import subprocess
@@ -103,6 +101,8 @@ print(" ")
 
 subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
 while True:
+    print(" ")
+    print(" ")
     def zobrazeni_vyzvy(pocet_pisnicek):
         vyzva = "Choose the file you want to play:"
         while True:
@@ -129,7 +129,7 @@ while True:
 
     subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
 
-#sleep(3)
+
 
 
 
