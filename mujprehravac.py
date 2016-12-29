@@ -67,7 +67,6 @@ from os import listdir
 from os.path import isfile, join
 import subprocess
 
-
 #funkce která vrátí seznam mp3 souborů z určitého adresáře
 def get_files (directory):
     mp3_files = []
