@@ -102,8 +102,34 @@ print(" ")
 print(" ")
 
 subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
+while True:
+    def zobrazeni_vyzvy(pocet_pisnicek):
+        vyzva = "Choose the file you want to play:"
+        while True:
+            try:
+                cislo_pisnicky = int(input(vyzva))
+                if cislo_pisnicky > 0 and cislo_pisnicky <= pocet_pisnicek:
+                    break
+            except:
+                pass
+            print("  It should be a number from 1 to", pocet_pisnicek)
+        return cislo_pisnicky
 
-sleep(3)
+
+    mp3_files = get_files(MUSIC_DIRECTORY)
+
+    for i, f in enumerate(mp3_files, start=1):
+        print(i, f)
+
+    cislo_vybrane_pisnicky = zobrazeni_vyzvy(len(mp3_files))
+    vybrany_soubor = mp3_files[cislo_vybrane_pisnicky - 1]
+    print("You chose a song number:", cislo_vybrane_pisnicky, vybrany_soubor)
+    print(" ")
+    print(" ")
+
+    subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
+
+#sleep(3)
 
 
 
