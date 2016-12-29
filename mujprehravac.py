@@ -1,5 +1,9 @@
 #!/usr/bin/python3.5
 
+MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
+
+
+
 print(" ")
 print("     Media player")
 print("     version 1.0")
@@ -60,14 +64,6 @@ print(" ")
 print(" ")
 
 
-
-
-MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
-
-
-
-
-
 from time import sleep
 from os import listdir
 from os.path import isfile, join
@@ -102,8 +98,11 @@ for i, f in enumerate(mp3_files, start=1):
 cislo_vybrane_pisnicky = zobrazeni_vyzvy(len(mp3_files))
 vybrany_soubor = mp3_files[cislo_vybrane_pisnicky -1]
 print ("You chose a song number:", cislo_vybrane_pisnicky, vybrany_soubor)
+print(" ")
+print(" ")
 
 subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
+
 sleep(3)
 
 
