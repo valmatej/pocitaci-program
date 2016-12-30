@@ -1,71 +1,83 @@
 #!/usr/bin/python3.5
+from os import listdir, chdir
+from os.path import isfile, join
+import subprocess
+import os, sys
 
 MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
 
+welcome_message = """
+     Media player
+     version 2.0
+     by Tomáš Jirka and Matěj Valášek
+
+                MM      MM 
+                M M   M MM 
+                M  MMM   M 
+                M        M 
 
 
-print(" ")
-print("     Media player")
-print("     version 2.0")
-print("     by Tomáš Jirka and Matěj Valášek")
-print(" ")
-print("                MM      MM ")
-print("                M M   M MM ")
-print("                M  MMM   M ")
-print("                M        M ")
-print(" ")
-print(" ")
-print("              EEEEEEEEEEE")
-print("              E")
-print("              E ")
-print("              EEEEEEEEEEE")
-print("              E")
-print("              E ")
-print("              EEEEEEEEEEE ")
-print(" ")
-print("             DDDDD ")
-print("             D    D")
-print("             D     D")
-print("             D      D ")
-print("             D        D")
-print("             D         D")
-print("             D         D ")
-print("             D        D ")
-print("             D      D")
-print("             D    D ")
-print("             D  D")
-print("             DDD")
-print(" ")
-print("           OOOO ")
-print("           OOOO ")
-print(" ")
-print("           III")
-print("           III")
-print("           III")
-print("           III")
-print("           III")
-print("           III")
-print("      IIIIIIIIIIIII")
-print(" ")
-print("                 AAA ")
-print("                A   A")
-print("               A     A")
-print("              A       A")
-print("             A         A ")
-print("            AAAAAAAAAAAAA  ")
-print("           A             A ")
-print("          A               A")
-print("         A                 A")
-print(" ")
-print(" ")
-print(" Pro vybrání jiného adresáře zadejte jinou cestu k adresáři,")
-print("spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
-print(" ")
-print(" ")
+              EEEEEEEEEEE
+              E
+              E 
+              EEEEEEEEEEE
+              E
+              E 
+              EEEEEEEEEEE 
 
-from os import listdir
-from os.path import isfile, join
-import subprocess
+             DDDDD 
+             D    D
+             D     D
+             D      D 
+             D        D
+             D         D
+             D         D 
+             D        D 
+             D      D
+             D    D 
+             D  D
+             DDD
+
+           OOOO 
+           OOOO 
+
+           III
+           III
+           III
+           III
+           III
+           III
+      IIIIIIIIIIIII
+
+                 AAA 
+                A   A
+               A     A
+              A       A
+             A         A 
+            AAAAAAAAAAAAA  
+           A             A 
+          A               A
+         A                 A
+
+
+ Pro vybrání jiného adresáře zadejte jinou cestu k adresáři,
+spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY
+"""
+
+
+print(welcome_message)
+
+# funkce která vrátí přejde do zadaného adresáře
+def change_directory():
+    soucasny_adresar = os.getcwd()
+    novy_adresar = input("Zvolte adresář (" + soucasny_adresar + "): ")
+    if novy_adresar == '':
+        print("tak nic, zůstávám v", soucasny_adresar)
+    else:
+        try:
+            chdir(novy_adresar)
+        except Exception as e:
+            print("Nelze přejít do adresáře " + novy_adresar, e)
 
 
 #funkce která vrátí seznam mp3 souborů z určitého adresáře
@@ -91,7 +103,8 @@ while True:
             return cislo_pisnicky
 
 
-        mp3_files = get_files(MUSIC_DIRECTORY)
+        change_directory()
+        mp3_files = get_files(".")
 
         for i, f in enumerate(mp3_files, start=1):
             print(i, f)
@@ -104,17 +117,5 @@ while True:
         print(" ")
 
         subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
-
-
-
-
-
-
-
-
-
-
-
-
 
 
