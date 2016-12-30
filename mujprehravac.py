@@ -98,6 +98,7 @@ while True:
 
         cislo_vybrane_pisnicky = zobrazeni_vyzvy(len(mp3_files))
         vybrany_soubor = mp3_files[cislo_vybrane_pisnicky - 1]
+        print(" ")
         print("You chose a song number:", cislo_vybrane_pisnicky, vybrany_soubor)
         print(" ")
         print(" ")
