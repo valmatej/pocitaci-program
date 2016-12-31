@@ -1,7 +1,5 @@
 #!/usr/bin/python3.5
-
 MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
-
 
 
 print(" ")
@@ -59,7 +57,7 @@ print("         A                 A")
 print(" ")
 print(" ")
 print(" Pro vybrání jiného adresáře zadejte jinou cestu k adresáři,")
-print("spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
+print(" spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
 print(" ")
 print(" ")
 
@@ -79,7 +77,8 @@ while True:
 
     while True:
         def zobrazeni_vyzvy(pocet_pisnicek):
-            vyzva = "Choose the file you want to play:"
+            vyzva = " Choose the file you want to play:"
+            print(" ")
             while True:
                 try:
                     cislo_pisnicky = int(input(vyzva))
@@ -99,12 +98,11 @@ while True:
         cislo_vybrane_pisnicky = zobrazeni_vyzvy(len(mp3_files))
         vybrany_soubor = mp3_files[cislo_vybrane_pisnicky - 1]
         print(" ")
-        print("You chose a song number:", cislo_vybrane_pisnicky, vybrany_soubor)
+        print(" You chose a song number:", cislo_vybrane_pisnicky, vybrany_soubor)
         print(" ")
         print(" ")
 
         subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
-
 
 
 
