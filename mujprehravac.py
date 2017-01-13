@@ -3,7 +3,6 @@
 MUSIC_DIRECTORY = "/home/mates/Plocha/Valmatej/hudba/Music"
 
 
-
 print(" ")
 print("     Media player")
 print("     version 2.0")
