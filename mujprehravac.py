@@ -103,7 +103,7 @@ while True:
         print(" ")
         print(" ")
 
-        subprocess.run(["mpg123", join(MUSIC_DIRECTORY, vybrany_soubor)])
+        subprocess.run(["mplayer", join(MUSIC_DIRECTORY, vybrany_soubor)])
 
 
 
