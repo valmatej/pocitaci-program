@@ -59,9 +59,14 @@ print("         A                 A")
 print(" ")
 print(" ")
 print(" Pro vybrání jiného adresáře zadejte jinou cestu k adresáři,")
-print("spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
+print(" spuštěním zdrojového kódu a změňte cestu MUSIC_DIRECTORY")
 print(" ")
+print(" veškeré chyby v překladu,překlepy,upozornění,logo,přání posílejte")
+print(" na e-mail: valmatej@seznam.cz")
 print(" ")
+print(" Více na www.linuxubuntu.estranky.cz")
+print(" ")
+
 
 from os import listdir
 from os.path import isfile, join
