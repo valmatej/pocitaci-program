@@ -182,6 +182,7 @@ while True:
         print(" vybral jste ve vybrané cestě písničku číslo: ", MUSIC_DIRECTORY, " - ", cislo_vybrane_pisnicky, vybrany_soubor )
         print(" ")
         print(" ")
+
         help = """ Nápověda:
         q-konec(quit)
         pravá a levá šipka určují pozici písně
