@@ -192,6 +192,7 @@ while True:
 
 
                                                 """
+
         print(help)
         hlaskapredprehr =""" Pod tímto textem začíná samotný text a funkce přehrávače!
 
